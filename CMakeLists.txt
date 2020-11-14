@@ -46,3 +46,16 @@ add_dependencies(flat_world_imu_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catki
 target_link_libraries(flat_world_imu_node
   ${catkin_LIBRARIES}
 )
+
+include_directories(
+  include ${catkin_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
+)
+
+add_executable(laser_imu_node
+  src/laser_imu_node.cpp
+)
+add_dependencies(laser_imu_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(laser_imu_node
+  ${catkin_LIBRARIES}
+)
